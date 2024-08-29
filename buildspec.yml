@@ -1,0 +1,10 @@
+phases:
+  build:
+    commands:
+      - mvn clean install
+      - docker build -t aws_deploye .
+      - docker tag aws_deploye:latest 480611177231.dkr.ecr.us-east-1.amazonaws.com/aws_deploye:latest
+      - docker push 480611177231.dkr.ecr.us-east-1.amazonaws.com/aws_deploye:latest
+  post_build:
+    commands:
+      - aws ecs update-service --cluster githubactions --service sprindemoservice --force-new-deployment --region us-east-1
