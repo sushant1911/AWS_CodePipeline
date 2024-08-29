@@ -9,6 +9,6 @@ public class TestController {
     @GetMapping("/welcome")
     public String welcome()
     {
-        return "welcome to aws deployment";
+        return "welcome to aws deployment new";
     }
 }
