@@ -53,7 +53,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		<finalName>springboot-aws-deploy-service</finalName>
+		<finalName>springboot-images-new</finalName>
 	</build>
 
 </project>
