@@ -44,3 +44,11 @@ jobs:
 
       - name: Push Docker image to ECR
         run: docker push 480611177231.dkr.ecr.us-east-1.amazonaws.com/aws_deploye:latest
+
+      - name: Deploy to ECS
+        run: |
+            aws ecs update-service \
+              --cluster githubactions  \
+              --service sprindemoservice \
+              --force-new-deployment \
+              --region us-east-1
